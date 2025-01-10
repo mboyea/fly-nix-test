@@ -1,0 +1,17 @@
+app = 'fly-nix-test'
+primary_region = 'den'
+
+[[vm]]
+  memory = '1GB'
+  cpu_kind = 'shared'
+  cpus = 2
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 8080
+  auto_stop_machines = 'stop'
+  auto_start_machines = false
+  min_machines_running = 0
+
+  [[services.ports]]
+    port = 8080
