@@ -1,10 +1,10 @@
+# fly.toml app configuration file generated for fly-nix-test on 2025-01-10T13:13:38-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
 app = 'fly-nix-test'
 primary_region = 'den'
-
-[[vm]]
-  memory = '1GB'
-  cpu_kind = 'shared'
-  cpus = 2
 
 [[services]]
   protocol = 'tcp'
@@ -15,3 +15,8 @@ primary_region = 'den'
 
   [[services.ports]]
     port = 8080
+
+[[vm]]
+  memory = '1GB'
+  cpu_kind = 'shared'
+  cpus = 2

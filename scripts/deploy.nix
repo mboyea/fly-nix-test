@@ -22,5 +22,5 @@ in pkgs.writeShellApplication {
     pkgs.skopeo
     pkgs.flyctl
   ];
-  text = builtins.readFile ./help.sh;
+  text = builtins.readFile ./deploy.sh;
 }

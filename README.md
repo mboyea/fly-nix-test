@@ -44,9 +44,9 @@ Scripts can be run from within the project directories using any shell with Nix 
 - Run `flyctl auth login`
 - Run `touch .env` to make file named `.env`
 - Determine your `<unique_app_name>`.
-- Set `app = '<unique_app_name>'` in `fly.toml`.
+- Set line `app = '<unique_app_name>'` in `fly.toml`.
 - Set line `FLY_APP_NAME="<unique_app_name>"` in `.env`.
-- Run `flyctl launch --no-deploy --ha=false --name <unique_app_name>`
+- Run `flyctl launch --no-deploy --name <unique_app_name>`
 - Run `flyctl tokens create deploy` to generate your `<fly_api_token>`.
 - Set line `FLY_API_TOKEN="<fly_api_token>"` in `.env`.
 - Run `nix run .#deploy`

@@ -36,7 +36,7 @@ deploy_docker_image_to_fly_registry() {
 }
 
 load_docker_image_on_fly_server() {
-  flyctl deploy -c "$FLY_CONFIG" -i "registry.fly.io/$FLY_APP_NAME:$DOCKER_IMAGE_TAG"
+  flyctl deploy --ha=false -c "$FLY_CONFIG" -i "registry.fly.io/$FLY_APP_NAME:$DOCKER_IMAGE_TAG"
 }
 
 main() {
