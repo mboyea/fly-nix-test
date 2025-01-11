@@ -3,14 +3,22 @@ echo_error() {
 }
 
 load_env_file() {
-  # go to base directory
+  # if git is not installed, return
+  if ! [ -x "$(command -v git)" ]; then
+    return
+  fi
+  # if current directory is not a git directory, return
+  if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    return
+  fi
+  # go to top-level of git directory
   base_dir="$(git rev-parse --show-toplevel)"
   cd "$base_dir"
-  # load .env file
-  if [ -r $ENV_FILE ]; then
+  # load .env file if it exists
+  if [ -r "$ENV_FILE" ]; then
     set -a
-    # shellcheck disable=SC1091
-    source $ENV_FILE
+    # shellcheck disable=SC1091 source=/dev/null
+    source "$ENV_FILE"
     set +a
   fi
 }
