@@ -9,6 +9,7 @@ default_: report
 ## A repository to test an issue with deploying to Fly
 
 See https://community.fly.io/t/docker-image-works-locally-but-not-on-fly-io-getting-command-not-found/23387/12 for details.
+This repository has been archived for reference purposes.
 
 ### Get Started
 

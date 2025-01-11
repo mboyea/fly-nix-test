@@ -10,7 +10,7 @@ load_env_file() {
   if [ -r $ENV_FILE ]; then
     set -a
     # shellcheck disable=SC1091
-    source .env
+    source $ENV_FILE
     set +a
   fi
 }
